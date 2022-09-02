@@ -24,6 +24,7 @@ header{
     align-items: center;
     padding: 1% 2%;
 }
+
 .button-primary{
     color: rgb(135,105,233);
     border-radius: 10px;
@@ -31,17 +32,31 @@ header{
     font-size: 18px;
     font-weight:500;
     padding: 0 1.6rem;
-    
     height: 4rem;   
     background-color: #ffffff;
 }
 .button-primary:hover{
-    background-image: linear-gradient(92.88deg,#7953c7 9.16%, #8667e7 43.89%, #8167e5 64.72%);
     color: white;
     transition-duration: 0.5s ease 0s;
     box-shadow: #c300ff;
     text-shadow: rgba(162, 162, 162, 0.25) 0 3px 8px;
     cursor: url('assets/logo/pointer.png'),auto;
+    background-image: linear-gradient(-45deg, #7953c7 , #8667e7 , #5541a4, #332761);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    /* height: 100vh; */
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 .nav-logo{
     margin-right: auto;
@@ -126,4 +141,5 @@ li{
     margin: auto;
     margin-top: 15%;
 }
+
 
