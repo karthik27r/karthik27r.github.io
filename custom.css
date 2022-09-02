@@ -58,6 +58,7 @@ header{
     margin-right: 2%;
     width:2%;
     height:2%;
+    margin-bottom: 1%;
     cursor: pointer;
 }
 .nav-small-github:hover{
@@ -71,7 +72,7 @@ header{
     align-items: flex-end;
 }
 .nav-small-linkedin{
-    
+    margin-bottom: 1%;
     width:3%;
     height:3%;
 }
@@ -123,6 +124,6 @@ li{
 .cv-down{
     align-items: center;
     margin: auto;
-    margin-top: 20%;
+    margin-top: 15%;
 }
 
