@@ -41,10 +41,9 @@ header{
     box-shadow: #c300ff;
     text-shadow: rgba(162, 162, 162, 0.25) 0 3px 8px;
     cursor: url('assets/logo/pointer.png'),auto;
-    background-image: linear-gradient(-45deg, #7953c7 , #8667e7 , #5541a4, #332761);
+    background-image: linear-gradient(-45deg, #7953c7 , #8667e7 , #745fca, #55439e);
     background-size: 400% 400%;
     animation: gradient 15s ease infinite;
-    /* height: 100vh; */
 }
 
 @keyframes gradient {
