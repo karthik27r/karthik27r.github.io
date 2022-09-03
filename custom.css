@@ -30,9 +30,9 @@ header{
     color: rgb(135,105,233);
     border-radius: 10px;
     box-sizing: border-box;
-    font-size: 18px;
+    font-size: 20px;
     font-weight:500;
-    margin-top: 2%;
+    margin-top: 60%;
     padding: 0 1.6rem;
     height: 4rem;   
     background-color: #ffffff;
@@ -130,24 +130,34 @@ li{
 
 .home-div{
     justify-content: center;
-    display: block;
+    display: flexbox;
+    /* padding-top: 5%; */
+}
+.home-text{
+    
+    margin-left: 10%;
     padding-top: 5%;
+    position: absolute;
+    
 }
 .superHeading1{
     color: white;
     text-align: left;
     margin-left: 10%;
-    position: absolute;
-
+    /* position: absolute; */
+    
 }
 .superHeading2{
-    display: block;
     color: white;
     text-align: left;
-    margin-left: 10%;
+    margin-left: 8%;
 }
-.head-name{font-size: 100px;}
-.head-name:hover{
+.superHeading2{
+    font-size: 80px; 
+    position: absolute;
+    display: inline-block;
+}
+.superHeading2:hover{
     transition: 1s ease-in-out 0.5s;
     background-image: linear-gradient(-45deg, #7953c7 , #8667e7 , #614ac1, #775fd5);
     background-size: auto auto;
@@ -159,7 +169,7 @@ li{
     -webkit-text-fill-color: transparent;
     animation: textclip 2s linear infinite;
     display: inline-block;
-    font-size: 100px;
+    font-size: 80px;
     cursor: url(assets/logo/pointer.png),auto;
   }
   
@@ -169,20 +179,20 @@ li{
     }
   }
 .cv-down{
-    padding-top: 30px;
-    align-items: left;
-    margin-top: 10%;
+    /* align-items: left; */
     padding-left: 10%;
+    
 }
-
+.my-image{
+    position: absolute;
+}
 .drawable{
-   margin-left: 50%;
-   height: 100%;
-   width: 80%;
-   position:fixed;
+   margin-left: 40%;
+   height: 60%;
+   width: 60%;
 }
 .drawable:hover{
-    content: url('assets/drawables/circle-purple.png');
+    content: url('assets/drawables/tri-purple.png');
     transition: 3s ease-in-out 2s;
     cursor: url('assets/logo/pointer.png'),auto;
  }
