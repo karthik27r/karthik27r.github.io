@@ -1,9 +1,8 @@
 import React from "react";
+import './ContentContainerStyle.css';
 
-function Container(){
-    return(
-        <div>Content Goes Here</div>
-    );
+function Container({ children }) {
+    return <div className="container">{children}</div>;
 }
 
 export default Container;

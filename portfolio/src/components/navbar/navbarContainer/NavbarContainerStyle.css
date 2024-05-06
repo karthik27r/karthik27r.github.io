@@ -1,9 +1,22 @@
-.navbar-position{
-    display: flex;
-    justify-content: center;
+.navbar-position {
+  display: flex;
+  justify-content: center;
 }
 
-.navbar-container{
-    background-color: black;
-    color: azure;
+.navbar-container {
+  background-color: rgb(25, 19, 55);
+  color: azure;
+  width: fit-content;
+  padding: 1rem 1rem;
+  border-radius: 1rem;
+  margin: 1rem auto;
+  transition: background-image 0.3s ease-in-out;
+}
+
+.navbar-container:hover {
+  background-image: radial-gradient(
+    circle at var(--x) var(--y),
+    rgba(65, 50, 142, 0.3),
+    transparent 40%
+  );
 }

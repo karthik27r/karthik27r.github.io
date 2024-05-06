@@ -1,21 +1,28 @@
 import React from "react";
-import { NavLink } from 'react-router-dom';
+import { NavLink } from "react-router-dom";
 import { navItems } from './NavbarItems';
+import './NavbarElementsStyle.css';
+
 
 function NavElements() {
-    return(
-    <nav>
+  return (
+    <nav className="nav-elements-container">
       {navItems.map((element) => (
-        <NavLink
-          key={element.path}
-          to={element.path}
-          activeClassName="active"
-        >
-          {element.label}
-        </NavLink>
+
+          <NavLink key={element.path}
+            to={element.path}
+            className={({ isActive }) => {
+              const baseClasses = 'nav-link-color nav-link-alignment';
+              return isActive ? `${baseClasses} active` : baseClasses;
+            }}
+          >
+            <div className="nav-item-alignment">
+              {element.icon && <element.icon className="nav-icon" />}
+              {element.label}
+            </div>
+          </NavLink>
       ))}
     </nav>
-    );
+  );
 }
-
 export default NavElements;
