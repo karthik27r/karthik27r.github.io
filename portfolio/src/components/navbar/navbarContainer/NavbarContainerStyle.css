@@ -1,0 +1,9 @@
+.navbar-position{
+    display: flex;
+    justify-content: center;
+}
+
+.navbar-container{
+    background-color: black;
+    color: azure;
+}

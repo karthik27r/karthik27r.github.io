@@ -1,16 +1,24 @@
 import logo from './assets/logo/logo-purple.png';
 import './App.css';
 
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
+import Navbar from './components/navbar/navbarContainer/NavbarContainer';
+import Container from './components/contentContainer/ContentContainer';
+
+import Home from './pages/Home';
+import About from './pages/About';
+
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          In Progress...
-        </p>
-      </header>
-    </div>
+    <Router>
+      <Navbar/>
+      <Container/>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+      </Routes>
+    </Router>
   );
 }
 
