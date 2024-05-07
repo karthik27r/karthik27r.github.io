@@ -1,10 +1,6 @@
 .nav-link-alignment{
-    margin-left: 2.5rem;
+    padding: 1rem 1rem;;
 }
-.nav-link-alignment:first-child {
-    margin-left: 0;
-}
-
 .nav-link-color{
     color: gray;
     text-decoration: none;
@@ -13,12 +9,29 @@
 .nav-link-color:hover{
     color: rgb(204, 204, 204);
     text-decoration: none;
+    
 }
 
 .nav-link-color.active {
     color: azure; 
     text-decoration: none; 
+    position: relative;
 }
+
+.nav-link-color.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0; 
+    left: 0; 
+    right: 0;
+    height: 1.5px;
+    width: 70%;
+    left: 50%; 
+    transform: translateX(-50%);
+    background: linear-gradient(to right, rgba(25, 19, 55, 0), azure, rgb(25, 19, 55, 0));
+    /* filter: blur(0.5px); */
+}
+
 
 .nav-elements-container{
     display: flex;

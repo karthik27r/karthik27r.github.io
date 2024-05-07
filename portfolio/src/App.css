@@ -1,4 +1,5 @@
 body {
   background-color: rgb(13, 10, 28);
   color:white;
+  overflow-y: scroll;
 }

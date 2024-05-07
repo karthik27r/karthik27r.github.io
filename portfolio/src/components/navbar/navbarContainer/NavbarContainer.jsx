@@ -9,10 +9,10 @@ function Navbar() {
         const navbar = navbarRef.current;
 
         const handleMouseMove = (e) => {
-            const { left, top, width, height } = navbar.getBoundingClientRect();
-            const x = ((e.clientX - left) / width) * 100;
-            const y = ((e.clientY - top) / height) * 100;
-            navbar.style.setProperty('--x', `${x}%`); //
+            const rect = navbar.getBoundingClientRect();
+            const x = ((e.clientX - rect.left) / rect.width) * 100;
+            const y = ((e.clientY - rect.top) / rect.height) * 100;
+            navbar.style.setProperty('--x', `${x}%`);
             navbar.style.setProperty('--y', `${y}%`);
         };
 
