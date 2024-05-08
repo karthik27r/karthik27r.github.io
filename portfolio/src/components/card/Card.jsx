@@ -1,5 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import './CardStyle.css';
+
+import { getMousePosition } from '../../scripts/mousePosition'; 
 
 function Card({ info }) {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -17,13 +19,29 @@ function Card({ info }) {
     setCurrentImageIndex((prevIndex) => (prevIndex === 0 ? info.carousel.length - 1 : prevIndex - 1));
   };
 
+  const cardRef = useRef();
+  useEffect(() => {
+      getMousePosition(cardRef, 'pixel');
+  }, []);
+
   return (
-    <div className="card-container">
+    <div ref={cardRef} className="card-container">
       <div className="card">
         <div className="card-header">
           <div className="title-role-group">
             <h2>{info.title}</h2>
+            {info.role &&
+            <div className='card-work-section'>
             {info.role && <p className="card-role">{info.role}</p>}
+            {info.time && 
+                <>
+                <p className="card-work-divider">|</p>
+                <p className="card-time">{info.time}</p>
+              </>
+            }
+            </div>
+            }
+            
           </div>
           <div className="card-tags">
             {info.tags && info.tags.map((tag, index) => (
@@ -33,7 +51,7 @@ function Card({ info }) {
             ))}
           </div>
           {info.companyLogo && (
-            <img src={info.companyLogo} alt="Company Logo" className="company-logo" />
+            <img src={info.companyLogo} alt="Company Logo" className="company-logo" href={info.companyLink ? info.companyLink : '' } />
           )}
         </div>
 

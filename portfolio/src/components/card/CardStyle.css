@@ -8,6 +8,17 @@
   transition: all 0.3s ease;
 }
 
+.card-container {
+  transition: all 1s ease-in-out; 
+}
+
+.card-container:hover {
+  box-shadow: 
+    calc(var(--x) - 30px) calc(var(--y) - 30px) 50px 15px rgba(45, 36, 93, 0.5);
+  transition: all 0s; 
+}
+
+
 .card:hover {
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
 }
@@ -147,9 +158,29 @@
   flex-direction: column;
 }
 
+.card-work-section{
+  display: flex;
+  justify-content: center;
+}
+
 .card-role{
-  margin-top: auto;
   margin-bottom: 0;
+  margin: auto;
+  font-style: italic;
+  /* margin-right: 0.5rem; */
+}
+
+.card-work-divider{
+  margin-bottom: 0;
+  margin: auto;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+.card-time{
+  margin: auto;
+  /* font-size: xx-small; */
+  /* margin-left: 0.5rem; */
 }
 
 .company-logo {
