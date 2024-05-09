@@ -1,7 +1,7 @@
 .card {
   border: 1px solid rgb(45, 36, 93);
   border-radius: 10px;
-  padding: 0.5rem;
+  padding: 1rem;
   margin-top: 2rem;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   background-color: rgb(30, 27, 47);
@@ -12,9 +12,13 @@
   transition: all 1s ease-in-out; 
 }
 
+.card-title{
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
 .card-container:hover {
-  box-shadow: 
-    calc(var(--x) - 30px) calc(var(--y) - 30px) 50px 15px rgba(45, 36, 93, 0.5);
+  box-shadow: calc(clamp(40px, var(--x), 70px) - 50px) calc(clamp(40px, var(--y), 70px) - 50px) 50px 15px rgba(45, 36, 93, 0.5);
   transition: all 0s; 
 }
 
@@ -27,6 +31,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 0.5rem;
 }
 
 .card-header h2 {
@@ -45,6 +50,8 @@
 }
 
 .card-body {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
   overflow: hidden;
   transition: all 0.3s ease;
 }
@@ -70,14 +77,6 @@
   gap: 16px;
   margin-top: 16px;
 }
-
-/* .card-thumbnails img {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  object-fit: cover;
-  cursor: pointer;
-} */
 
 .gallery {
   position: relative;
@@ -145,8 +144,10 @@
 
 .dot.active {
   padding:0.5rem;
-  height: 1rem;
+  height: 2rem;
   width: auto;
+  display: inline-flex;
+  align-items: center;
 }
 
 .carousel-text{
@@ -167,7 +168,6 @@
   margin-bottom: 0;
   margin: auto;
   font-style: italic;
-  /* margin-right: 0.5rem; */
 }
 
 .card-work-divider{
@@ -179,8 +179,7 @@
 
 .card-time{
   margin: auto;
-  /* font-size: xx-small; */
-  /* margin-left: 0.5rem; */
+  color: silver;
 }
 
 .company-logo {

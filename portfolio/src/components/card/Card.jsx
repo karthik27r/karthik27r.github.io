@@ -29,7 +29,7 @@ function Card({ info }) {
       <div className="card">
         <div className="card-header">
           <div className="title-role-group">
-            <h2>{info.title}</h2>
+            <h2 className="card-title">{info.title}</h2>
             {info.role &&
             <div className='card-work-section'>
             {info.role && <p className="card-role">{info.role}</p>}

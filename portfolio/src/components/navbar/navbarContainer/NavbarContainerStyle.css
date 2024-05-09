@@ -4,12 +4,22 @@
 }
 
 .navbar-container {
-  background-color: rgb(25, 19, 55);
-  color: azure;
-  width: fit-content;
-  border-radius: 1rem;
-  margin: 1rem auto;
+  background-color: rgb(25, 19, 55); 
+  color: azure; 
+  border-radius: 1rem; 
   transition: background-image 0.3s ease-in-out;
+  width: fit-content;
+}
+
+.fixed-navbar {
+  position: fixed;
+  top: 1rem; 
+  z-index: 10;
+}
+
+.relative-navbar {
+  position: relative; 
+  margin-top: 1rem; 
 }
 
 .navbar-container:hover {
