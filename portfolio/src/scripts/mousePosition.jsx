@@ -1,24 +1,15 @@
-{/* Use to calculate the position of mouse within an element */}
-
-export function getMousePosition(elementRef, unit) {
-
-    const requestUnit = unit === 'pixel'? 'px': '%';
-
-    if (!elementRef.current) return; 
+export function getMousePosition(elementRef, event, unit) {
+    if (!elementRef.current) return null;
 
     const element = elementRef.current;
+    const rect = element.getBoundingClientRect();
 
-    const handleMouseMove = (e) => {
-        const rect = element.getBoundingClientRect();
-        const x = ((e.clientX - rect.left) / rect.width) * 100;
-        const y = ((e.clientY - rect.top) / rect.height) * 100;
-        element.style.setProperty('--x', `${x}${requestUnit}`);
-        element.style.setProperty('--y', `${y}${requestUnit}`);
-    };
+    let x = (event.clientX - rect.left);
+    let y = (event.clientY - rect.top);
 
-    element.addEventListener('mousemove', handleMouseMove);
+        x = (x / rect.width) * 100;
+        y = (y / rect.height) * 100;
 
-    return () => {
-        element.removeEventListener('mousemove', handleMouseMove);
-    };
+
+    return { x, y };
 }

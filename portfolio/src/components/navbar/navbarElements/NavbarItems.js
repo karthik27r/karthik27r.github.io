@@ -6,8 +6,8 @@ import { MdOutlineWavingHand } from "react-icons/md";
 
 export const navItems = [
   { path: '/', label: 'Home', icon: AiOutlineHome },
-  { path: '/about', label: 'About', icon: MdOutlineWavingHand },
+  // { path: '/about', label: 'About', icon: MdOutlineWavingHand },
   { path: '/work', label: 'Work', icon: PiSuitcase },
   { path: '/projects', label: 'Projects', icon: AiOutlineProject },
-  { path: '/contact', label: 'Contact', icon: LuPhone },
+  // { path: '/contact', label: 'Contact', icon: LuPhone },
 ];

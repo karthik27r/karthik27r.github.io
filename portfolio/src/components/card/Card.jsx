@@ -1,11 +1,11 @@
 import React, { useState, useRef, useEffect } from 'react';
 import './CardStyle.css';
-
 import { getMousePosition } from '../../scripts/mousePosition'; 
 
 function Card({ info }) {
   const [isExpanded, setIsExpanded] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
   const toggleReadMore = () => {
     setIsExpanded(!isExpanded);
@@ -20,28 +20,43 @@ function Card({ info }) {
   };
 
   const cardRef = useRef();
+
   useEffect(() => {
-      getMousePosition(cardRef, 'pixel');
-  }, []);
+    const handleMouseMove = (e) => {
+      const mousePos = getMousePosition(cardRef, e, 'pixel');
+      if (mousePos) {
+        setMousePosition({ x: mousePos.x, y: mousePos.y }); 
+      }
+    };
+
+    if (cardRef.current) {
+      cardRef.current.addEventListener('mousemove', handleMouseMove); 
+    }
+
+    return () => {
+      if (cardRef.current) {
+        cardRef.current.removeEventListener('mousemove', handleMouseMove); 
+      }
+    };
+  }, [cardRef.current]); 
 
   return (
-    <div ref={cardRef} className="card-container">
+    <div ref={cardRef} className="card-container" style={{ '--x': `${mousePosition.x}px`, '--y': `${mousePosition.y}px` }}>
       <div className="card">
         <div className="card-header">
           <div className="title-role-group">
             <h2 className="card-title">{info.title}</h2>
-            {info.role &&
-            <div className='card-work-section'>
-            {info.role && <p className="card-role">{info.role}</p>}
-            {info.time && 
-                <>
-                <p className="card-work-divider">|</p>
-                <p className="card-time">{info.time}</p>
-              </>
-            }
-            </div>
-            }
-            
+            {info.role && (
+              <div className="card-work-section">
+                {info.role && <p className="card-role">{info.role}</p>}
+                {info.time && (
+                  <>
+                    <p className="card-work-divider">|</p>
+                    <p className="card-time">{info.time}</p>
+                  </>
+                )}
+              </div>
+            )}
           </div>
           <div className="card-tags">
             {info.tags && info.tags.map((tag, index) => (
@@ -51,7 +66,7 @@ function Card({ info }) {
             ))}
           </div>
           {info.companyLogo && (
-            <img src={info.companyLogo} alt="Company Logo" className="company-logo" href={info.companyLink ? info.companyLink : '' } />
+            <img src={info.companyLogo} alt="Company Logo" className="company-logo" href={info.companyLink ? info.companyLink : ''} />
           )}
         </div>
 
@@ -90,13 +105,13 @@ function Card({ info }) {
             {isExpanded ? 'Read Less' : 'Read More'}
           </p>
         </div>
-        {info.thumbnails &&
+        {info.thumbnails && (
           <div className="card-thumbnails">
-            {info.thumbnails.map((item, index) =>
-              <img src={item.image} alt="Tech Logo" className="thumbnail-item" />
-            )}
+            {info.thumbnails.map((item, index) => (
+              <img key={index} src={item.image} alt="Tech Logo" className="thumbnail-item" />
+            ))}
           </div>
-        }
+        )}
       </div>
     </div>
   );

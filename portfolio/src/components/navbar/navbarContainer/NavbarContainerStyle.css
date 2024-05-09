@@ -6,7 +6,7 @@
 .navbar-container {
   background-color: rgb(25, 19, 55); 
   color: azure; 
-  border-radius: 1rem; 
+  border-radius: 30px; 
   transition: background-image 0.3s ease-in-out;
   width: fit-content;
 }
