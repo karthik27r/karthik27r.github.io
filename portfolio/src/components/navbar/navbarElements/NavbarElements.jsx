@@ -18,7 +18,7 @@ function NavElements() {
           >
             <div className="nav-item-alignment">
               {element.icon && <element.icon className="nav-icon" />}
-              {element.label}
+              <p className="nav-title">{element.label}</p>
             </div>
           </NavLink>
       ))}

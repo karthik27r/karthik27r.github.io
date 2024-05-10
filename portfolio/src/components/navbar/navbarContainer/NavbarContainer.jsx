@@ -45,7 +45,7 @@ function Navbar() {
     if (typeof current === 'number') {
       const direction = current - scrollYProgress.getPrevious();
 
-      if (scrollYProgress.get() < 0.1 || inital) {
+      if (scrollYProgress.get() < 0 || inital) {
         console.log('1');
         setVisible(true);
         setIsFixed(false);

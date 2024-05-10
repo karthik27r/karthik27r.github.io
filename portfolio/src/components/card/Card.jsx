@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import './CardStyle.css';
-import { getMousePosition } from '../../scripts/mousePosition'; 
+import { getMousePosition } from '../../scripts/mousePosition';
 
 function Card({ info }) {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -25,20 +25,20 @@ function Card({ info }) {
     const handleMouseMove = (e) => {
       const mousePos = getMousePosition(cardRef, e, 'pixel');
       if (mousePos) {
-        setMousePosition({ x: mousePos.x, y: mousePos.y }); 
+        setMousePosition({ x: mousePos.x, y: mousePos.y });
       }
     };
 
     if (cardRef.current) {
-      cardRef.current.addEventListener('mousemove', handleMouseMove); 
+      cardRef.current.addEventListener('mousemove', handleMouseMove);
     }
 
     return () => {
       if (cardRef.current) {
-        cardRef.current.removeEventListener('mousemove', handleMouseMove); 
+        cardRef.current.removeEventListener('mousemove', handleMouseMove);
       }
     };
-  }, [cardRef.current]); 
+  }, [cardRef.current]);
 
   return (
     <div ref={cardRef} className="card-container" style={{ '--x': `${mousePosition.x}px`, '--y': `${mousePosition.y}px` }}>
@@ -82,18 +82,26 @@ function Card({ info }) {
                     alt={info.carousel[currentImageIndex].carouselText || 'Image'}
                   />
                 </div>
-                <div className="dots">
-                  {info.carousel.map((item, index) => (
-                    <span
-                      key={index}
-                      className={`dot ${index === currentImageIndex ? 'active' : ''}`}
-                      onClick={() => setCurrentImageIndex(index)}
-                    >
-                      {index === currentImageIndex && (
-                        <p className="carousel-text">{item.carouselText}</p>
-                      )}
-                    </span>
-                  ))}
+                <div className='gallery-navigation'>
+                  <div className="dots">
+                    {info.carousel.map((item, index) => (
+                      <span
+                        key={index}
+                        className={`dot ${index === currentImageIndex ? 'active' : ''}`}
+                        onClick={() => setCurrentImageIndex(index)}
+                      >
+                        {index === currentImageIndex && (
+                          <p className="carousel-text">{item.carouselText}</p>
+                        )}
+                      </span>
+                    ))}
+                  </div>
+                  <div className='gallery-navigation-arrows'>
+                    <button onClick={prevImage} className="gallery-control left-control">&#10094;</button>
+                    <button onClick={nextImage} className="gallery-control right-control">&#10095;</button>
+                  </div>
+
+
                 </div>
               </div>
             </div>

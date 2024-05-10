@@ -1,3 +1,7 @@
+.nav-elements-container{
+    transition: all 0.3s ease-in-out;
+}
+
 .nav-link-alignment{
     padding: 1rem 1rem;;
 }
@@ -44,4 +48,14 @@
 .nav-item-alignment{
     display:flex;
     align-items: center;
+}
+
+@media (max-width: 600px) {
+    .card {
+      padding: 24px;
+    }
+
+    .nav-title{
+      display: none;
+    }
 }
