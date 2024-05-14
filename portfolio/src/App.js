@@ -24,7 +24,7 @@ function App() {
 
   return (
     <Router>
-      {!showSplash ? (
+      {showSplash ? (
         <SplashScreen text="In Progress..." showSplash = 'true' />
       ) : (
         <>

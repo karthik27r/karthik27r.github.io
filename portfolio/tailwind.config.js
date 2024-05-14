@@ -12,17 +12,12 @@ module.exports = {
   ],
   theme: {
     extend: {
-      animation: {
-        aurora: "aurora 60s linear infinite",
+      colors:{
+        'bg-color': 'var(--bg-color)',
       },
-      keyframes: {
-        aurora: {
-          from: {
-            backgroundPosition: "50% 50%, 50% 50%",
-          },
-          to: {
-            backgroundPosition: "350% 50%, 350% 50%",
-          },
+      backgroundImage: {
+        extend: {
+          '-mask-radial-gradient': 'radial-gradient(circle at 10% 10%, rgba(128, 0, 128, 1) 30%, rgba(128, 0, 128, 0) 60%), radial-gradient(circle at 90% 90%, rgba(128, 0, 128, 1) 30%, rgba(128, 0, 128, 0) 60%)',
         },
       },
     },
