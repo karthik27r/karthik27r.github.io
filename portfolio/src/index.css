@@ -7,6 +7,42 @@
   --bg-color: rgb(13, 10, 28);
 }
 
+@font-face {
+  font-family: 'CoffeeHealing';
+  src: local('CoffeeHealing'), url(./assets/fonts/CoffeeHealing.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'AnandaBlack';
+  src: local('AnandaBlack'), url(./assets/fonts/AnandaBlack.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'AnkhSanctuary';
+  src: local('AnkhSanctuary'), url(./assets/fonts/AnkhSanctuary.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'CreamySugar';
+  src: local('CreamySugar'), url(./assets/fonts/CreamySugar.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'MonainnRegular';
+  src: local('MonainnRegular'), url(./assets/fonts/MonainnRegular.otf) format('opentype');
+}
+
+@font-face {
+  font-family: 'Queensides';
+  src: local('Queensides'), url(./assets/fonts/Queensides.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Supercharge';
+  src: local('Supercharge'), url(./assets/fonts/Supercharge.otf) format('opentype');
+}
+
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',

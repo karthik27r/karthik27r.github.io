@@ -1,14 +1,15 @@
 .navbar-position {
   display: flex;
   justify-content: center;
+  transition: top 0.3s ease, opacity 0.3s ease;
 }
 
 .navbar-container {
   background-color: rgb(25, 19, 55); 
   color: azure; 
   border-radius: 30px; 
-  transition: background-image 0.3s ease-in-out;
   width: fit-content;
+  transition: background-image 0.3s ease-in-out;
 }
 
 .fixed-navbar {
@@ -28,4 +29,16 @@
     rgba(65, 50, 142, 0.3),
     transparent 40%
   );
+}
+
+.navbar-wrapper.center-navbar .navbar-position {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  opacity: 0;
 }
