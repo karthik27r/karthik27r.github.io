@@ -5,6 +5,7 @@
 
 :root {
   --bg-color: rgb(13, 10, 28);
+  --accent-color: #f8cc1b;
 }
 
 @font-face {

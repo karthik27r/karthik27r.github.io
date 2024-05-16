@@ -1,27 +1,38 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useAnimation } from "framer-motion";
 import { motion } from "framer-motion";
 import { cn } from "../../utils/cn.ts";
-
 import { Snippets } from "./DummyCode.js";
 
-const SplashScreen = ({ text, className, showSplash }) => {
-    const [randomString, setRandomString] = useState("");
+const fonts = [
+    "CoffeeHealing",
+    "AnandaBlack",
+    "AnkhSanctuary",
+    "CreamySugar",
+    "MonainnRegular",
+    "Queensides",
+    "Supercharge",
+];
 
-    let itr = 250;
+const SplashScreen = ({ text, className, showSplash, setFinalFont }) => {
+    const [randomString, setRandomString] = useState("");
+    const [randomFont, setRandomFont] = useState("");
+
     useEffect(() => {
         if (showSplash) {
             let intervalId = setInterval(() => {
                 let str = generateRandomString(25000);
                 setRandomString(str);
-            }, itr);
-
-            let initialStr = generateRandomString(25000);
-            setRandomString(initialStr);
+                let font = fonts[Math.floor(Math.random() * fonts.length)];
+                setRandomFont(font);
+            }, 250);
 
             return () => clearInterval(intervalId);
+        } else {
+            // SplashScreen ended, set the final font
+            setFinalFont(randomFont);
         }
-    }, [showSplash]);
+    }, [showSplash, randomFont, setFinalFont]);
 
     return (
         <div
@@ -29,8 +40,12 @@ const SplashScreen = ({ text, className, showSplash }) => {
                 "p-0.5 bg-black flex items-center justify-center w-full h-full absolute overflow-hidden",
                 className
             )}
+            style={{ fontFamily: randomFont }}
         >
             <CardPattern randomString={randomString} showSplash={showSplash} />
+            <motion.h1 className="main-title" style={{ fontFamily: randomFont }}>
+                {text}
+            </motion.h1>
         </div>
     );
 };
@@ -53,16 +68,10 @@ const CardPattern = ({ randomString, showSplash }) => {
         if (showSplash) {
             controls.start({
                 backgroundImage: [
-                    'linear-gradient(to right, rgb(13, 10, 28), rgba(13, 10, 28, 0))',
-                    'linear-gradient(to right, rgb(13, 10, 28), rgb(13, 10, 28, 1))',
+                    "linear-gradient(to right, rgb(13, 10, 28), rgba(13, 10, 28, 0))",
+                    "linear-gradient(to right, rgb(13, 10, 28), rgb(13, 10, 28, 1))",
                 ],
-                // backgroundPosition: ["10% 10%", "90% 90%"],
-                // backgroundSize: ['200%','200%'],
-                // backgroundImage: [
-                //     'radial-gradient(circle at 50% 50%, rgb(13, 10, 28) 1%, rgba(128, 0, 128, 0) 20%)',
-                //     'radial-gradient(circle at 50% 50%, rgb(13, 10, 28) 90%, rgba(128, 0, 128, 0) 100%)',
-                // ],
-                transition: { duration: 3, repeat: Infinity, repeatType: "reverse" },
+                transition: { duration: 4, repeat: Infinity, repeatType: "reverse" },
             });
         } else {
             controls.stop();
@@ -71,16 +80,9 @@ const CardPattern = ({ randomString, showSplash }) => {
 
     return (
         <div className="pointer-events-none relative w-full h-full">
-            <motion.div
-                className="absolute inset-0 rounded-2xl transition duration-500"
-                animate={controls}
-            />
-            <motion.div
-                className="absolute inset-0 rounded-2xl transition duration-500"
-            >
-                <p className="absolute inset-x-0 text-xs h-full break-words whitespace-pre-wrap text-yellow-500 font-mono font-bold">
-                    {randomString}
-                </p>
+            <motion.div className="absolute inset-0 rounded-2xl transition duration-500" animate={controls} />
+            <motion.div className="absolute inset-0 rounded-2xl mix-blend-overlay transition duration-500">
+                <p className="absolute inset-x-0 text-xs h-full text-white font-mono font-bold">{randomString}</p>
             </motion.div>
         </div>
     );

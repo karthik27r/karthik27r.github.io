@@ -12,38 +12,58 @@ import { splashScreenAnimation } from './scripts/splashScreenAnimation';
 
 function App() {
   const [showSplash, setShowSplash] = useState(true);
+  const [finalFont, setFinalFont] = useState("CoffeeHealing");
 
   useEffect(() => {
     splashScreenAnimation().then((shouldShow) => {
       setShowSplash(shouldShow);
+      if (!shouldShow) {
+        // SplashScreen animation finished, set final font
+        const randomFont = getRandomFont();
+        setFinalFont(randomFont);
+      }
     });
   }, []);
 
-  function Layout() {
-    const location = useLocation();
-
-    return (
-      <>
-        <Navbar currentPath={location.pathname} />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/work" element={<Work />} />
-        </Routes>
-      </>
-    );
+  function getRandomFont() {
+    const fonts = [
+      "CoffeeHealing",
+      "AnandaBlack",
+      "AnkhSanctuary",
+      "CreamySugar",
+      "MonainnRegular",
+      "Queensides",
+      "Supercharge",
+    ];
+    return fonts[Math.floor(Math.random() * fonts.length)];
   }
 
   return (
     <Router>
       {showSplash ? (
-        <SplashScreen text="In Progress..." showSplash='true' />
+        <SplashScreen text="Karthik R" showSplash={showSplash} setFinalFont={setFinalFont} />
       ) : (
-        <Layout />
+        <Layout finalFont={finalFont} />
       )}
     </Router>
   );
 }
 
+function Layout({ finalFont }) {
+  const location = useLocation();
+
+  return (
+    <>
+      <Navbar currentPath={location.pathname} />
+      <Routes>
+        <Route path="/" element={<Home finalFont={finalFont} />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/projects" element={<Projects />} />
+        <Route path="/work" element={<Work />} />
+      </Routes>
+    </>
+  );
+}
+
 export default App;
+

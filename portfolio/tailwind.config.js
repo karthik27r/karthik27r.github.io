@@ -14,6 +14,7 @@ module.exports = {
     extend: {
       colors:{
         'bg-color': 'var(--bg-color)',
+        'accent-color': 'var(--accent-color)'
       },
       backgroundImage: {
         extend: {

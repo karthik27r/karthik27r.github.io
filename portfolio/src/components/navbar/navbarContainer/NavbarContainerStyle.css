@@ -9,7 +9,8 @@
   color: azure; 
   border-radius: 30px; 
   width: fit-content;
-  transition: background-image 0.3s ease-in-out;
+  transition: box-shadow 0.3s ease-in-out;
+  /* border: 0.05px solid var(--accent-color); */
 }
 
 .fixed-navbar {
@@ -29,16 +30,16 @@
     rgba(65, 50, 142, 0.3),
     transparent 40%
   );
+  box-shadow: 0 0 5px var(--accent-color);
 }
 
 .navbar-wrapper.center-navbar .navbar-position {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, 50%);
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
   opacity: 0;
 }
