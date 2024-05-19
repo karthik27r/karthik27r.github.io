@@ -5,7 +5,7 @@ import { projects } from "./ProjectList";
 
 import { AiOutlineProject } from 'react-icons/ai';
 
-function Projects() {
+function Projects( initPath ) {
   const heading = (
     <>
         <AiOutlineProject className="icon" />
@@ -14,8 +14,8 @@ function Projects() {
 );
 
     return (
-        <Container heading={heading}>
-            <p>These are some of the projects I have worked on recently...</p>
+        <Container heading={heading} variantType={initPath = '/' ? 'upToDown' : 'downToUp'}>
+            <p>I have worked on a variety of projects over the years; some of them as a hobby and some as a proof of concept. Here are some of the projects that I have worked on.</p>
             <div className="project-list">
                 {projects.map((info, index) => (
                     <Card key={index} info={info} />

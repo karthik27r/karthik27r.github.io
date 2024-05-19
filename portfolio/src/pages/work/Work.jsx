@@ -4,7 +4,7 @@ import { PiSuitcase } from 'react-icons/pi';
 import Card from "../../components/card/Card";
 import Container from "../../components/contentContainer/ContentContainer";
 
-function Work() {
+function Work(initPath) {
     const heading = (
         <>
             <PiSuitcase className="icon"/>
@@ -13,7 +13,7 @@ function Work() {
     );
 
     return (
-        <Container heading={heading}>
+        <Container heading={heading} variantType={initPath = '/' ? 'upToDown' : 'downToUp'}>
             <p>These are some of the projects I have worked on recently...</p>
             <div className="project-list">
                 {experience.map((info, index) => (

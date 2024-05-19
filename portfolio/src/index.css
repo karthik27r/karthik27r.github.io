@@ -5,12 +5,39 @@
 
 :root {
   --bg-color: rgb(13, 10, 28);
-  --accent-color: #f8cc1b;
+  --bg-color-alt : rgb(25, 19, 55);
+
+  --brut-green: rgb(34, 160, 148);
+  --brut-green-alt: rgb(50, 236, 218);
+
+  --text-azure: azure;
+  --text-white: white;
+
+
+  --accent-color: rgb(254, 201, 1);
+
+
+}
+
+::-moz-selection { 
+  color: black;
+  background: rgb(254, 201, 1);
+}
+
+::selection {
+  color: black;
+  background: rgb(254, 201, 1);
+}
+
+
+@font-face {
+  font-family: 'Abnes';
+  src: local('Abnes'), url(./assets/fonts/abnes.ttf) format('truetype');
 }
 
 @font-face {
-  font-family: 'CoffeeHealing';
-  src: local('CoffeeHealing'), url(./assets/fonts/CoffeeHealing.ttf) format('truetype');
+  font-family: 'Agoka';
+  src: local('Agoka'), url(./assets/fonts/Agoka.otf) format('opentype');
 }
 
 @font-face {
@@ -19,13 +46,38 @@
 }
 
 @font-face {
+  font-family: 'Andmorey';
+  src: local('Andmorey'), url(./assets/fonts/Andmorey.otf) format('opentype');
+}
+
+@font-face {
   font-family: 'AnkhSanctuary';
   src: local('AnkhSanctuary'), url(./assets/fonts/AnkhSanctuary.ttf) format('truetype');
 }
 
 @font-face {
+  font-family: 'BlackJaguar';
+  src: local('BlackJaguar'), url(./assets/fonts/BlackJaguar.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'CoffeeHealing';
+  src: local('CoffeeHealing'), url(./assets/fonts/CoffeeHealing.ttf) format('truetype');
+}
+
+@font-face {
   font-family: 'CreamySugar';
   src: local('CreamySugar'), url(./assets/fonts/CreamySugar.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Emotions';
+  src: local('Emotions'), url(./assets/fonts/Emotions.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'HFLacrimosa';
+  src: local('HFLacrimosa'), url(./assets/fonts/HFLacrimosa.ttf) format('truetype');
 }
 
 @font-face {
@@ -39,9 +91,35 @@
 }
 
 @font-face {
+  font-family: 'Sequences';
+  src: local('Sequences'), url(./assets/fonts/Sequences.ttf) format('truetype');
+}
+
+@font-face {
   font-family: 'Supercharge';
   src: local('Supercharge'), url(./assets/fonts/Supercharge.otf) format('opentype');
 }
+
+@font-face {
+  font-family: 'Tostada';
+  src: local('Tostada'), url(./assets/fonts/Tostada.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Vodan';
+  src: local('Vodan'), url(./assets/fonts/Vodan.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Wolfgang';
+  src: local('Wolfgang'), url(./assets/fonts/Wolfgang.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Xenosphere';
+  src: local('Xenosphere'), url(./assets/fonts/xenosphere.ttf) format('truetype');
+}
+
 
 
 body {

@@ -66,15 +66,15 @@ function Navbar({ currentPath }) {
           <motion.div
             ref={navbarRef}
             initial={{
-              opacity: 1,
-              y: currentPath === '/' ? 100 : 0,
+              opacity: 0,
+              y: currentPath === '/' ? 500 : 0,
             }}
             animate={{
-              y: visible ? 0 : currentPath === '/' ? 100 : -100, 
+              y: currentPath === '/' ? 350 : 0, 
               opacity: visible ? 1 : 0,
             }}
             transition={{
-              duration: 0.3,
+              duration: 0.5,
             }}
             style={{
               '--x': `${mousePosition.x}%`,

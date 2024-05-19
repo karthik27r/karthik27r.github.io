@@ -5,34 +5,56 @@ import { cn } from "../../utils/cn.ts";
 import { Snippets } from "./DummyCode.js";
 
 const fonts = [
-    "CoffeeHealing",
+    "Abnes",
+    "Agoka",
     "AnandaBlack",
+    "Andmorey",
     "AnkhSanctuary",
+    "BlackJaguar",
+    "CoffeeHealing",
     "CreamySugar",
+    "Emotions",
+    "HFLacrimosa",
     "MonainnRegular",
     "Queensides",
+    "Sequences",
     "Supercharge",
+    "Tostada",
+    "Vodan",
+    "Wolfgang",
+    "Xenosphere"
 ];
 
-const SplashScreen = ({ text, className, showSplash, setFinalFont }) => {
+const SplashScreen = ({ text, className, showSplash, onFontChange }) => {
     const [randomString, setRandomString] = useState("");
     const [randomFont, setRandomFont] = useState("");
 
+    const [itr, setItr] = useState(0);
+
     useEffect(() => {
+        let intervalId;
+
         if (showSplash) {
-            let intervalId = setInterval(() => {
+            intervalId = setInterval(() => {
                 let str = generateRandomString(25000);
+                setItr(prevItr => prevItr + 250);
+                console.log('itr ' + itr);
                 setRandomString(str);
                 let font = fonts[Math.floor(Math.random() * fonts.length)];
-                setRandomFont(font);
+                if (itr < 3500) {
+                    setRandomFont(font);
+                    onFontChange(font);
+                }
             }, 250);
-
-            return () => clearInterval(intervalId);
-        } else {
-            // SplashScreen ended, set the final font
-            setFinalFont(randomFont);
         }
-    }, [showSplash, randomFont, setFinalFont]);
+
+        return () => {
+            clearInterval(intervalId);
+            if (itr > 4500) {
+                onFontChange(randomFont);
+            }
+        };
+    }, [showSplash, itr, onFontChange]);
 
     return (
         <div
@@ -40,10 +62,16 @@ const SplashScreen = ({ text, className, showSplash, setFinalFont }) => {
                 "p-0.5 bg-black flex items-center justify-center w-full h-full absolute overflow-hidden",
                 className
             )}
-            style={{ fontFamily: randomFont }}
+            // style={{ fontFamily: randomFont }}
         >
             <CardPattern randomString={randomString} showSplash={showSplash} />
-            <motion.h1 className="main-title" style={{ fontFamily: randomFont }}>
+            <motion.h1
+                className="main-title"
+                style={{ fontFamily: randomFont }}
+                initial={{ letterSpacing: "1em" }}
+                animate={{ letterSpacing: "normal" }}
+                transition={{ duration: 5 }}
+            >
                 {text}
             </motion.h1>
         </div>

@@ -1,0 +1,72 @@
+.about-page {
+    border: 1px solid rgb(45, 36, 93);
+    border-radius: 10px;
+    padding: 1rem;
+    margin-top: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: rgb(30, 27, 47);
+    transition: all 0.3s ease;
+}
+
+.about-page:hover{
+    box-shadow: calc(clamp(40px, var(--x), 70px) - 50px) calc(clamp(40px, var(--y), 70px) - 50px) 50px 15px rgba(45, 36, 93, 0.5);
+    transition: all 0s; 
+}
+  
+  .profile-section {
+    display:flex;
+    align-items: center;
+    margin-bottom: 1vh;
+  }
+  
+  .profile-picture {
+    border-radius: 50%;
+    width: 8rem;
+    height: 8rem;
+    object-fit: cover;
+    margin-bottom: 10px;
+  }
+
+  .info-section{
+    margin-left: 2vw;
+  }
+  
+  .name {
+    font-size: 2em;
+    color: #fff;
+  }
+  
+  .title {
+    font-size: 1.2em;
+    color: #b0b0b0;
+  }
+  
+  .bio-section {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+  }
+  
+  .bio-section p {
+    margin: 10px 0;
+  }
+  
+  .links-section {
+    margin-top: 20px;
+  }
+  
+  .social-link {
+    color: #c0c0c0;
+    margin: 0 10px;
+    text-decoration: none;
+    font-size: 1.2em;
+  }
+  
+  .social-link i {
+    margin-right: 5px;
+  }
+  
+  .social-link:hover {
+    color: #fff;
+  }
+  
