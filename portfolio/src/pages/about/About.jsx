@@ -36,7 +36,7 @@ function About() {
 
   return (
     <Container variantType="upToDown">
-      <div ref={cardRef} className="about-page" style={{ '--x': `${mousePosition.x}px`, '--y': `${mousePosition.y}px` }}>
+      <div className="about-page">
         <div className="profile-section">
           <img src={myPhoto} alt="Profile" className="profile-picture" />
           <div className="info-section" >
@@ -45,6 +45,7 @@ function About() {
           </div>
         </div>
         <div className="bio-section">
+          <p>"What ra Sudeep?! ⚡"</p>
         </div>
         <div className="links-section">
           <a href="https://github.com/karthik27r" className="social-link">

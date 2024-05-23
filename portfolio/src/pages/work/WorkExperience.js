@@ -6,7 +6,14 @@ export const experience = [
       companyLogo: "https://www.novigosolutions.com/images/novigo-logo.svg",
       companyLink: "https://www.novigosolutions.com/",
       body: "Worked as a SW Engineer at Novigo Solutions",
-      detail:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+      detail:` > Developed and maintained backend systems for a major American bank client, ensuring robust and scalable architecture.
+      > Integrated multiple banking APIs, enhancing the functionality and interoperability of financial services.
+      > Updated outdated APIs to align with newer frameworks, improving security, performance, and compliance.
+      > Collaborated with PLAID for seamless financial data aggregation and integration, facilitating better user insights.
+      > Implemented PayPal integration to support diverse payment methods, enhancing user experience and transaction efficiency.
+      > Conducted thorough testing and debugging to ensure the reliability and stability of integrated APIs.
+      > Worked closely with cross-functional teams to gather requirements and deliver high-quality solutions within tight deadlines.
+      > Employed best practices in API design and development, ensuring maintainability and scalability of the backend systems.`,
     },
     {
       title: "Project Two",

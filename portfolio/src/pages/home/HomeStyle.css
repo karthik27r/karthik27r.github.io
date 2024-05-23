@@ -26,21 +26,22 @@
 }
 
 .intro-left, .intro-right {
-  position: absolute;
+  position: relative;
   font-size: 1.5vw;
   color: azure;
   margin: 0;
 }
 
 .intro-left {
-  top: 0;
   left: 0;
-  text-align: left;
+  bottom: 8vh;
+  display: flex;
+  align-items: center;
+
 }
 
 .intro-right {
-  bottom: 0;
+  top: 8vh;
   right: 0;
-  text-align: right;
   font-family: AnandaBlack;
 }
