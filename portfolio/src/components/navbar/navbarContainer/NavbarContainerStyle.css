@@ -30,7 +30,7 @@
     rgba(65, 50, 142, 0.3),
     transparent 40%
   );
-  box-shadow: 0 0 5px var(--accent-color);
+  box-shadow: 0 0 2px azure;
 }
 
 /* .navbar-wrapper.center-navbar .navbar-position {

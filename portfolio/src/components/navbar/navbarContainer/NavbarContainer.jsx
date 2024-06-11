@@ -42,7 +42,7 @@ function Navbar({ currentPath }) {
         setVisible(true);
         setIsFixed(false);
         setInitial(false);
-      } else {
+      } else if (currentPath !== '/') {
         if (direction < 0) {
           setVisible(true);
           setIsFixed(true);

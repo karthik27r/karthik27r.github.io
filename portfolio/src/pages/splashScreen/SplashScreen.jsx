@@ -68,8 +68,6 @@ const SplashScreen = ({ text, className, showSplash, onFontChange }) => {
             <motion.h1
                 className="main-title"
                 style={{ fontFamily: randomFont }}
-                initial={{ letterSpacing: "1em" }}
-                animate={{ letterSpacing: "normal" }}
                 transition={{ duration: 5 }}
             >
                 {text}
