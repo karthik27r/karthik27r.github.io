@@ -9,6 +9,8 @@ import About from './pages/about/About';
 import Projects from './pages/project/Projects';
 import Work from './pages/work/Work';
 import SplashScreen from './pages/splashScreen/SplashScreen';
+import Contact from './pages/contact/Contact';
+
 import { splashScreenAnimation } from './scripts/splashScreenAnimation';
 
 function App() {
@@ -44,6 +46,7 @@ function Layout({ finalFont }) {
           <Route path="/about" element={<About initPath = {location.pathname} />} />
           <Route path="/projects" element={<Projects initPath = {location.pathname} />} />
           <Route path="/work" element={<Work />} initPath = {location.pathname}/>
+          <Route path="/contact" element={<Contact/>} initPath = {location.pathname}/>
         </Routes>
       </AnimatePresence>
     </>
