@@ -1,19 +1,19 @@
 export const experience = [
-    {
-      title: "Novigo Solutions",
-      role: "Software Engineer",
-      time: "Aug 23 - Ongoing",
-      companyLogo: "https://www.novigosolutions.com/images/novigo-logo.svg",
-      companyLink: "https://www.novigosolutions.com/",
-      body: "Worked as a SW Engineer at Novigo Solutions",
-      detail:` > Developed and maintained backend systems for a major American bank client, ensuring robust and scalable architecture.
-      > Integrated multiple banking APIs, enhancing the functionality and interoperability of financial services.
-      > Updated outdated APIs to align with newer frameworks, improving security, performance, and compliance.
-      > Collaborated with PLAID for seamless financial data aggregation and integration, facilitating better user insights.
-      > Implemented PayPal integration to support diverse payment methods, enhancing user experience and transaction efficiency.
-      > Conducted thorough testing and debugging to ensure the reliability and stability of integrated APIs.
-      > Worked closely with cross-functional teams to gather requirements and deliver high-quality solutions within tight deadlines.
-      > Employed best practices in API design and development, ensuring maintainability and scalability of the backend systems.`,
+  {
+    title: "Novigo Solutions",
+    role: "Software Engineer",
+    time: "Aug 23 - Ongoing",
+    companyLogo: "https://www.novigosolutions.com/images/novigo-logo.svg",
+    companyLink: "https://www.novigosolutions.com/",
+    body: "Worked as a SW Engineer at Novigo Solutions",
+    detail: `My Journey with Novigo began on May 2023 as a "Trainee Software Engineer". My first project with Novigo was to build an Interview/Recruitment Web app. Me along with a team of 5 other people developed the said application within 3 months:
+    • Implemented a real-time MCQ-based quiz system with robust checks for malpractice.
+    • Created dynamic student/candidate profile views and functionality to assign panelists for interviews and record detailed interview feedback.
+    • Automated the assignment of panelists and optimized the selection of the best candidates based on specific recruitment requirements.
+    Later I worked for an American Banking Client where i developed:
+    • Integrated multiple banking APIs, expanding the client’s financial service capabilities.
+    • Implemented seamless financial transaction and data synchronization features
+    • Collaborated with backend teams to enhance API performance and reliability `,
     },
     {
       title: "Project Two",

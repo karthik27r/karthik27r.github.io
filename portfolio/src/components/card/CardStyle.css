@@ -211,6 +211,21 @@
   }
 }
 
+.card-body ul {
+    padding-left: 20px;
+    list-style-type: disc;
+}
+
+.card-body li {
+    margin-bottom: 10px;
+    margin-top: 10px;
+    margin-left: 15px;
+}
+
+.card-main-desc{
+  margin-bottom: 15px;
+}
+
 
 /* @media (min-width: 768px) {
   .card {
