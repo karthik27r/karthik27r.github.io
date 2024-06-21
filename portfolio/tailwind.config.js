@@ -14,6 +14,7 @@ module.exports = {
     extend: {
       colors:{
         'bg-color': 'var(--bg-color)',
+        'bg-color-alt' : 'var(--bg-color-alt)',
         'accent-color': 'var(--accent-color)',
         'brut-green': 'var(--brut-green)'
       },

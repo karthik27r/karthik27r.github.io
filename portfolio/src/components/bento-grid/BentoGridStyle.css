@@ -1,0 +1,8 @@
+.bento-item-card {
+    /* background-image: radial-gradient(
+        circle at calc(var(--x, 50%) * 1%) calc(var(--y, 50%) * 1%),
+        rgba(65, 50, 142, 0.3),
+        transparent 40%
+    ); */
+    cursor: pointer
+}

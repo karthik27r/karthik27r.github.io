@@ -16,7 +16,7 @@ function Navbar({ currentPath }) {
 
   useEffect(() => {
     const handleMouseMove = (e) => {
-      const mousePos = getMousePosition(navbarRef, e, 'percentage');
+      const mousePos = getMousePosition(navbarRef, e, 'percent');
       if (mousePos) {
         setMousePosition({ x: mousePos.x, y: mousePos.y });
       }
