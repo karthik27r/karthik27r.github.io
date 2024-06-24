@@ -13,7 +13,7 @@
 }
 
 .main-title {
-  font-size: 6vw;
+  font-size: clamp(3.5rem, 0.5rem + 10vw, 4rem);
   color: var(--accent-color);
   position: absolute;
   top: 50%;
@@ -27,7 +27,7 @@
 
 .intro-left, .intro-right {
   position: relative;
-  font-size: 1.5vw;
+  font-size: 20px;
   color: azure;
   margin: 0;
 }

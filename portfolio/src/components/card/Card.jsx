@@ -2,8 +2,8 @@ import React, { useState, useRef, useEffect } from 'react';
 import './CardStyle.css';
 import { getMousePosition } from '../../scripts/mousePosition';
 
-function Card({ info }) {
-    const [isExpanded, setIsExpanded] = useState(false);
+function Card({ info, overlay }) {
+    const [isExpanded, setIsExpanded] = useState(overlay);
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
     const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
@@ -41,33 +41,31 @@ function Card({ info }) {
     }, [cardRef.current]);
 
     const renderDetail = () => {
-      const lines = info.detail.split('\n');
-      const content = [];
-      
-      lines.forEach((line, index) => {
-          line = line.trim();
-          if (line.startsWith('•')) {
-              content.push(<li key={index}>{line.slice(1).trim()}</li>);
-          } else {
+        const lines = info.detail.split('\n');
+        const content = [];
+        
+        lines.forEach((line, index) => {
+            line = line.trim();
+            if (line.startsWith('•')) {
+                content.push(<li key={index}>{line.slice(1).trim()}</li>);
+            } else {
+                if (content.length > 0 && Array.isArray(content[content.length - 1])) {
+                    content.push(<ul key={`ul-${index}`}>{content.pop()}</ul>);
+                }
+                content.push(<p key={index}>{line}</p>);
+            }
+        });
 
-              if (content.length > 0 && Array.isArray(content[content.length - 1])) {
-                  content.push(<ul key={`ul-${index}`}>{content.pop()}</ul>);
-              }
-              content.push(<p key={index}>{line}</p>);
-          }
-      });
-  
+        if (content.length > 0 && Array.isArray(content[content.length - 1])) {
+            content.push(<ul key={`ul-${lines.length}`}>{content.pop()}</ul>);
+        }
 
-      if (content.length > 0 && Array.isArray(content[content.length - 1])) {
-          content.push(<ul key={`ul-${lines.length}`}>{content.pop()}</ul>);
-      }
-  
-      return content;
-  };
+        return content;
+    };
 
     return (
-        <div ref={cardRef} className="card-container" style={{ '--x': `${mousePosition.x}px`, '--y': `${mousePosition.y}px` }}>
-            <div className="card">
+        <div ref={cardRef} className={`${overlay ? '' : 'card-container'}`} style={{ '--x': `${mousePosition.x}px`, '--y': `${mousePosition.y}px` }}>
+            <div className={`${overlay ? 'card-overlay' : 'card'}`}>
                 <div className="card-header">
                     <div className="title-role-group">
                         <h2 className="card-title">{info.title}</h2>
@@ -82,6 +80,18 @@ function Card({ info }) {
                                 )}
                             </div>
                         )}
+                        <div className="project-links">
+                            {info.githubLink && (
+                                <a href={info.githubLink} target="_blank" rel="noopener noreferrer" className="project-link github-link">
+                                    GitHub
+                                </a>
+                            )}
+                            {info.demoLink && (
+                                <a href={info.demoLink} target="_blank" rel="noopener noreferrer" className="project-link demo-link">
+                                    Demo
+                                </a>
+                            )}
+                        </div>
                     </div>
                     <div className="card-tags">
                         {info.tags && info.tags.map((tag, index) => (
@@ -131,11 +141,13 @@ function Card({ info }) {
                     )}
                 </div>
 
-                <div className="card-read-more">
-                    <p onClick={toggleReadMore} className="read-more-btn">
-                        {isExpanded ? 'Read Less' : 'Read More'}
-                    </p>
-                </div>
+                {!overlay && (
+                    <div className="card-read-more">
+                        <p onClick={toggleReadMore} className="read-more-btn">
+                            {isExpanded ? 'Read Less' : 'Read More'}
+                        </p>
+                    </div>
+                )}
                 {info.thumbnails && (
                     <div className="card-thumbnails">
                         {info.thumbnails.map((item, index) => (

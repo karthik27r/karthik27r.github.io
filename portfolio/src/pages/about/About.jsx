@@ -45,7 +45,7 @@ function About() {
           </div>
         </div>
         <div className="bio-section">
-          <p>"What ra Sudeep?! ⚡"</p>
+          <p>"Work In Progress ⚡"</p>
         </div>
         <div className="links-section">
           <a href="https://github.com/karthik27r" className="social-link">

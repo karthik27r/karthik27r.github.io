@@ -38,15 +38,23 @@ function Navbar({ currentPath }) {
     if (typeof current === 'number') {
       const direction = current - scrollYProgress.getPrevious();
 
+      console.log('Current ' + current);
+      console.log('Direction ' + direction);
+      console.log('scrollYProgress' + scrollYProgress);
+
       if (scrollYProgress.get() < 0 || initial) {
+        console.log( 'isInitial ? '+ initial + ' Y<0 Scrollbar Close');
         setVisible(true);
         setIsFixed(false);
         setInitial(false);
       } else if (currentPath !== '/') {
-        if (direction < 0) {
+        console.log( 'Current Path is not /');
+        if (direction < 0 || current === 1) {
+          console.log( 'direction < 0');
           setVisible(true);
           setIsFixed(true);
         } else {
+          console.log('direction > 0');
           setVisible(false);
         }
       }

@@ -7,44 +7,50 @@ import { BentoGrid, BentoGridItem } from "../../components/bento-grid/BentoGrid"
 
 import './ProjectStyle.css'
 
-function Projects(initPath) {
+function Projects() {
   const [selectedProject, setSelectedProject] = useState(null);
 
   const handleProjectClick = (project) => {
-    console.log('Project Card ' + selectedProject)
     setSelectedProject(project);
   };
 
   const heading = (
     <>
       <AiOutlineProject className="icon" />
-      <h1 className="title">Projects</h1>
+      <h1 className="title">[Work In Progress] Projects</h1>
     </>
   );
 
   return (
-    <Container heading={heading} variantType={initPath === '/' ? 'upToDown' : 'downToUp'}>
-
-    {selectedProject && (
-            <div className="overlay">
-            <Card 
-                info={selectedProject}  
+    <Container heading={heading} variantType='upToDown'>
+      {selectedProject && (
+        <div className="overlay">
+          <div className="project-detail-component">
+            <div className="close-button" onClick={() => setSelectedProject(null)}>X</div>
+            <div className="project-detail-content">
+              <Card
+                info={selectedProject}
+                overlay={true}
                 onClose={() => setSelectedProject(null)}
-            />
+              />
             </div>
-        )}
-    
+          </div>
+        </div>
+      )}
+
       <p>I have worked on a variety of projects over the years; some of them as a hobby and some as a proof of concept. Here are some of the projects that I have worked on.</p>
       <BentoGrid className="mt-2">
-        {projects.map((info, index) => (
-          <BentoGridItem 
-            key={index} 
-            title={info.title} 
-            description={info.body}
-            onClick={() => handleProjectClick(info)}
-          />
-        ))}
-      </BentoGrid>
+  {projects.map((project, index) => (
+    <BentoGridItem
+      key={index}
+      title={project.title}
+      description={project.body}
+      tags={project.tags}
+      carousel={project.carousel}
+      onClick={() => handleProjectClick(project)}
+    />
+  ))}
+</BentoGrid>
     </Container>
   );
 }

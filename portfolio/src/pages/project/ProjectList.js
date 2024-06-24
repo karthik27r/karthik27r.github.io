@@ -1,6 +1,11 @@
 import reactLogo from '../../assets/logo/tech-logos/react-logo.png';
 import mongoLogo from '../../assets/logo/tech-logos/mongo-logo.png';
 
+import infodeskMarks from '../../assets/photos/project/infodesk/marks.jpg';
+import infodeskProfile from '../../assets/photos/project/infodesk/profile.jpg';
+import infodeskTimeTable from '../../assets/photos/project/infodesk/timetable.jpg';
+import infodeskEvents from '../../assets/photos/project/infodesk/events.jpg';
+
 export const projects = [
   {
     title: "Infodesk - An Academic ERP System",
@@ -10,6 +15,25 @@ export const projects = [
       ],
     body: "This is a short description of Project One.",
     detail:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+    githubLink: "https://github.com/karthik27r/student_infodesk",
+    carousel:[
+      {
+        carouselImage:infodeskProfile,
+        carouselText: "Profile Page Displayinig User Details",
+      },
+      {
+        carouselImage:infodeskMarks,
+        carouselText: "Marks Page of InfoDesk",
+      },
+      {
+        carouselImage:infodeskTimeTable,
+        carouselText: "Not so Basic Implementation of Something",
+      },
+      {
+        carouselImage:infodeskEvents,
+        carouselText: "Not so Basic Implementation of Something",
+      }
+    ],
     thumbnails: [
       {
         image: reactLogo,
@@ -27,6 +51,7 @@ export const projects = [
         { name: "Machine Learning", color: "#f7df1e", textColor: "#000" },
         { name: "Python", color: "#e34c26", textColor: "#fff" }, 
     ],
+    githubLink: "https://github.com/sachxn/TSMAI",
     body: "This is a longer description of Project Two. It goes into some detail about the project and provides additional context.",
     detail:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
     carousel:[

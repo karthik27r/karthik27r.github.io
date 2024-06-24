@@ -1,5 +1,5 @@
 import './App.css';
-import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, useLocation, Navigate } from "react-router-dom";
 import { useState, useEffect } from 'react';
 import { AnimatePresence } from "framer-motion";
 
@@ -18,9 +18,15 @@ function App() {
   const [finalFont, setFinalFont] = useState("CoffeeHealing");
 
   useEffect(() => {
-    splashScreenAnimation().then((shouldShow) => {
-      setShowSplash(shouldShow);
-    });
+    const hasVisited = sessionStorage.getItem('hasVisited');
+    if (!hasVisited) {
+      splashScreenAnimation().then((shouldShow) => {
+        setShowSplash(shouldShow);
+        sessionStorage.setItem('hasVisited', 'true');
+      });
+    } else {
+      setShowSplash(false);
+    }
   }, []);
 
   return (
@@ -42,11 +48,12 @@ function Layout({ finalFont }) {
       <Navbar currentPath={location.pathname} />
       <AnimatePresence mode='wait'>
         <Routes location={location} key={location.pathname}>
-          <Route path="/" element={<Home finalFont={finalFont} initPath = {location.pathname} />} />
-          <Route path="/about" element={<About initPath = {location.pathname} />} />
-          <Route path="/projects" element={<Projects initPath = {location.pathname} />} />
-          <Route path="/work" element={<Work />} initPath = {location.pathname}/>
-          <Route path="/contact" element={<Contact/>} initPath = {location.pathname}/>
+          <Route path="/" element={<Home finalFont={finalFont} initPath={location.pathname} />} />
+          <Route path="/about" element={<About initPath={location.pathname} />} />
+          <Route path="/projects" element={<Projects initPath={location.pathname} />} />
+          <Route path="/work" element={<Work initPath={location.pathname} />} />
+          <Route path="/contact" element={<Contact initPath={location.pathname} />} />
+          <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </AnimatePresence>
     </>

@@ -8,6 +8,17 @@
   transition: all 0.3s ease;
 }
 
+.card-overlay {
+  border: 1px solid rgb(45, 36, 93);
+  border-radius: 10px;
+  padding: 1rem;
+  background-color: rgb(30, 27, 47);
+  transition: all 0.3s ease;
+  box-shadow: none;
+  margin-top: 0;
+}
+
+
 .card-container {
   transition: all 1s ease-in-out; 
 }
@@ -76,6 +87,34 @@
   justify-content: flex-start;
   gap: 16px;
   margin-top: 16px;
+}
+
+.project-links {
+  margin-top: 0.5rem;
+}
+
+.project-link {
+  display: inline-block;
+  margin-right: 1rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+}
+
+.github-link {
+  background-color: #24292e;
+  color: white;
+}
+
+.demo-link {
+  background-color: #0366d6;
+  color: white;
+}
+
+.project-link:hover {
+  opacity: 0.8;
 }
 
 .gallery {

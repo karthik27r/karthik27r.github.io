@@ -1,13 +1,33 @@
 .overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-  }
-  
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.project-detail-component {
+  display: flex;
+  flex-direction: column;
+  height: 90%;
+  width: 60%;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.project-detail-content {
+  flex: 1;
+  overflow-y: auto; 
+  border-radius: 10px;
+}
+
+.close-button {
+  align-self: flex-end;
+  cursor: pointer;
+  padding: 0.5rem;
+}
