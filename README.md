@@ -1,5 +1,7 @@
 # 🌟 Karthik R's Portfolio Website
 
+Portfolio Link: [https://karthikr-portfolio.vercel.app/](https://karthikr-portfolio.vercel.app/)
+
 Welcome to the repository of my personal portfolio website! Based from my current experience with the latest frontend technologies i aim to create interactive site that showcases my skills, projects, and professional journey in the world of web development and design.
 
 ![Portfolio Preview](/src/assets/photos/portfolio.jpg)
