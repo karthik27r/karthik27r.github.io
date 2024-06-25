@@ -1,5 +1,6 @@
 import React from "react";
 import Container from "../../components/contentContainer/ContentContainer.jsx";
+import { FlipTextEffect } from "../../components/textEffect/FlipTextEffect.jsx";
 import './HomeStyle.css';
 
 function WaveEmoji() {
@@ -11,6 +12,8 @@ function WaveEmoji() {
   );
 }
 
+const words  = ["a Software Engineer", "a Web Developer", "a Designer" ,"a Tech Enthusiast"];
+
 function Home({ finalFont, initPath }) {
   const variantType = initPath === '/' ? 'homeUp' : 'homeDown';
   return (
@@ -20,7 +23,9 @@ function Home({ finalFont, initPath }) {
         <h1 className="main-title" style={{ fontFamily: finalFont }}>
           Karthik R
         </h1>
-        <a className="intro-right">a Software Engineer</a>
+        <div className="intro-right">
+          <FlipTextEffect words={words}/>
+        </div>
       </div>
     </Container>
   );

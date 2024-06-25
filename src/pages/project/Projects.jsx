@@ -48,6 +48,7 @@ function Projects() {
       tags={project.tags}
       carousel={project.carousel}
       onClick={() => handleProjectClick(project)}
+      className={index === 0 || index === 3 ? "md:col-span-2" : ""}
     />
   ))}
 </BentoGrid>
