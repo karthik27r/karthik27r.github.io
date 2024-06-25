@@ -15,7 +15,9 @@ import { splashScreenAnimation } from './scripts/splashScreenAnimation';
 
 function App() {
   const [showSplash, setShowSplash] = useState(true);
-  const [finalFont, setFinalFont] = useState("CoffeeHealing");
+  const [finalFont, setFinalFont] = useState(() => {
+    return sessionStorage.getItem('finalFont') || "CoffeeHealing";
+  });
 
   useEffect(() => {
     const hasVisited = sessionStorage.getItem('hasVisited');
@@ -29,10 +31,15 @@ function App() {
     }
   }, []);
 
+  const handleFontChange = (font) => {
+    setFinalFont(font);
+    sessionStorage.setItem('finalFont', font);
+  };
+
   return (
     <Router>
       {showSplash ? (
-        <SplashScreen text="Karthik R" showSplash={showSplash} onFontChange={(font) => setFinalFont(font)} />
+        <SplashScreen text="Karthik R" showSplash={showSplash} onFontChange={handleFontChange} />
       ) : (
         <Layout finalFont={finalFont} />
       )}

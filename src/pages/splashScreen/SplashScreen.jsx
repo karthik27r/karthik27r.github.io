@@ -5,23 +5,17 @@ import { cn } from "../../utils/cn.ts";
 import { Snippets } from "./DummyCode.js";
 
 const fonts = [
-    "Abnes",
     "Agoka",
     "AnandaBlack",
     "Andmorey",
     "AnkhSanctuary",
-    "BlackJaguar",
     "CoffeeHealing",
     "CreamySugar",
-    "Emotions",
     "HFLacrimosa",
     "MonainnRegular",
-    "Queensides",
-    "Sequences",
     "Supercharge",
     "Tostada",
     "Vodan",
-    "Wolfgang",
     "Xenosphere"
 ];
 
@@ -38,7 +32,6 @@ const SplashScreen = ({ text, className, showSplash, onFontChange }) => {
             intervalId = setInterval(() => {
                 let str = generateRandomString(25000);
                 setItr(prevItr => prevItr + 250);
-                console.log('itr ' + itr);
                 setRandomString(str);
                 let font = fonts[Math.floor(Math.random() * fonts.length)];
                 if (itr < 3500) {
